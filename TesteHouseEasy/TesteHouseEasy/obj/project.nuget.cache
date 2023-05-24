@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9wfEhkrh1shQC672v8/qsTAp8WVJd8o8y0fjWAiEAVRzGAIikiZqhMDwzTY15eUgF6lcJdZdKiUXpoj+oH46Mw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nicla\\source\\repos\\houseasy-teste-backend\\TesteHouseEasy\\TesteHouseEasy\\TesteHouseEasy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nicla\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\nicla\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\nicla\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\nicla\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\nicla\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\nicla\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
