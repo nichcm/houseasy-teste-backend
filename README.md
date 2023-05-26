@@ -15,14 +15,18 @@ Este repositório contém um código em C# que utiliza o .NET Entity Framework e
 
 # Instruções de Configuração
 1) Clone o repositório em sua máquina local usando o seguinte comando:
+  ```
   git clone https://github.com/nichcm/houseasy-teste-backend.git
+  ```
 2) Abra o arquivo de solução (TesteHouseEasy.sln) no Visual Studio.
 3) Restaure os pacotes do NuGet clicando com o botão direito na solução no Solution Explorer e selecionando "Restaurar Pacotes do NuGet".
 4) Configure a string de conexão no arquivo appsettings.json. Atualize o valor Database com os detalhes do seu servidor de banco de dados.
 5) Abra o Package Manager Console no Visual Studio indo em Ferramentas > Gerenciador de Pacotes do NuGet > Console do Gerenciador de Pacotes.
 6) Execute o seguinte comando no Package Manager Console para aplicar a migração 
-    cd .\TesteHouseEasy\
-    dotnet ef database update --context SistemaDbContext
+```
+cd .\TesteHouseEasy\
+dotnet ef database update --context SistemaDbContext
+```
     
 7)Compile a solução para garantir que tudo esteja configurado corretamente.
 8)Execute o aplicativo e explore o código fornecido para entender sua estrutura e funcionalidade.
