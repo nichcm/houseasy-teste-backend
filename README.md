@@ -1,44 +1,48 @@
-# Teste Vaga Dev Back-end na Houseasy
-Repositório a fim de testar candidatos para vaga de Dev Back-end na Empresa https://houseasy.net/
+# README
 
-| Para esta vaga, buscamos alguém apaixonado por desafios e atento aos detalhes!
+# Descrição
+Este repositório contém um código em C# que utiliza o .NET Entity Framework e Migrations. Ele fornece uma base para construir aplicativos que exigem operações e migrações de banco de dados.
 
+# Tecnologias Utilizadas
+- C#
+- .NET Framework
+- Entity Framework
+- Migrations
 
-  # Instruções a respeito do repositório
-  
-    1 - Faça um Fork deste repositório;
-    2 - Ao terminar, atualize o README.md no seu repositório com as instruções de instalação e como executar o projeto;
+# Pré-requisitos
+- Visual Studio (ou qualquer IDE compatível) com o .NET Framework instalado.
+- SQL Server (ou qualquer outro servidor de banco de dados suportado).
+
+# Instruções de Configuração
+1) Clone o repositório em sua máquina local usando o seguinte comando:
+  ```
+  git clone https://github.com/nichcm/houseasy-teste-backend.git
+  ```
+2) Abra o arquivo de solução (TesteHouseEasy.sln) no Visual Studio.
+3) Restaure os pacotes do NuGet clicando com o botão direito na solução no Solution Explorer e selecionando "Restaurar Pacotes do NuGet".
+4) Configure a string de conexão no arquivo appsettings.json. Atualize o valor Database com os detalhes do seu servidor de banco de dados.
+5) Abra o Package Manager Console no Visual Studio indo em Ferramentas > Gerenciador de Pacotes do NuGet > Console do Gerenciador de Pacotes.
+6) Execute o seguinte comando no Package Manager Console para aplicar a migração 
+```
+cd .\TesteHouseEasy\
+dotnet ef database update --context SistemaDbContext
+```
     
-    
-  # Stack
-    
-    - C#
-    
-  # Desafio
-  - Você deve fazer uma API utilizando a linguagem C# e framework .net 6.0.
-    - Essa api deve conter um CRUD de:
-      - Usuários
-      - Endereços
-      - Telefones
-      - Ocupação
-      
-      Utilize boas praticas de programação.
+7)Compile a solução para garantir que tudo esteja configurado corretamente.
+8)Execute o aplicativo e explore o código fornecido para entender sua estrutura e funcionalidade.
 
- 
-# Principais requisitos:
-    1 - Uso de Migrations;
-    2 - Uso de MappingProfiles (DTO para response ou para request);
-    3 - Uso de ContextAPI
 
- 
+# Utilização
+Este código pode servir como ponto de partida para o desenvolvimento de aplicativos que exigem operações de banco de dados usando o Entity Framework e Migrations. Ele fornece um conjunto de modelos de banco de dados preconfigurados, migrações e configurações de conexão para facilitar o processo de desenvolvimento.
 
-Os diferenciais serão a utilização de técnicas do Clean Code, criação de documentação via sweagger ou postman e containerização do projeto.
+Sinta-se à vontade para modificar e estender o código de acordo com seus requisitos específicos. Você pode adicionar mais modelos, definir migrações adicionais e personalizar as operações de banco de dados conforme necessário.
 
-                
-           
-   ## Final
-                
-    - Subir o repositório no seu Github e enviar o link com o assunto: Teste Dev. Backend para Carlos Henrique em carlos.souza@houseasy.net
-     e no e-mail, informar do que se trata sua aplicação, com um breve resumo.
-        
+# Contribuições
+Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
+
+Faça um fork do repositório.
+Crie um novo branch para sua funcionalidade ou correção de bug.
+Faça suas alterações e as cometa.
+Envie suas alterações para o seu repositório forkado.
+Envie um pull request explicando suas alterações.
         
