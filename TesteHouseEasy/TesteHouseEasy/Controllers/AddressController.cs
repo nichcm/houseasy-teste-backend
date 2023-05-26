@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using TesteHouseEasy.Contracts;
 using TesteHouseEasy.Models;
 using TesteHouseEasy.Models.Contract;
@@ -11,12 +12,15 @@ namespace TesteHouseEasy.Controllers
     public class AddressController : Controller
     {
         private readonly IRepositoryBase<AddressModel> _repositoryBase;
+        private readonly IMapper _mapper;
         public AddressController(
             ILogger<AddressModel> logger,
-            IRepositoryBase<AddressModel> repositoryBase
+            IRepositoryBase<AddressModel> repositoryBase,
+            IMapper mapper
             )
         {
             _repositoryBase = repositoryBase;
+            _mapper = mapper;
         }
 
 
@@ -51,12 +55,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultRequest> Insert([FromBody] AddressModel entity)
+        public async Task<ResultRequest> Insert([FromBody] AddressDTO entity)
         {
             try
             {
-                await _repositoryBase.Insert(entity);
-                return new ResultRequest(true, new AddressDTO(entity));
+                var addressModel = _mapper.Map<AddressDTO, AddressModel>(entity);
+                await _repositoryBase.Insert(addressModel);
+                return new ResultRequest(true, new AddressDTO(addressModel));
             }
             catch (Exception ex)
             {
@@ -65,12 +70,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPut]
-        public async Task<ResultRequest> Update([FromBody] AddressModel entity)
+        public async Task<ResultRequest> Update([FromBody] AddressDTO entity)
         {
             try
             {
-                await _repositoryBase.Update(entity);
-                return new ResultRequest(true, new AddressDTO(entity));
+                var addressModel = _mapper.Map<AddressDTO, AddressModel>(entity);
+                await _repositoryBase.Update(addressModel);
+                return new ResultRequest(true, new AddressDTO(addressModel));
             }
             catch (Exception ex)
             {

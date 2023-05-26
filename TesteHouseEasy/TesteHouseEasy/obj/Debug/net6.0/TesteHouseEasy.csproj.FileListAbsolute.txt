@@ -86,3 +86,5 @@ C:\Users\nicla\source\repos\houseasy-teste-backend\TesteHouseEasy\TesteHouseEasy
 C:\Users\nicla\source\repos\houseasy-teste-backend\TesteHouseEasy\TesteHouseEasy\obj\Debug\net6.0\TesteHouseEasy.genruntimeconfig.cache
 C:\Users\nicla\source\repos\houseasy-teste-backend\TesteHouseEasy\TesteHouseEasy\obj\Debug\net6.0\ref\TesteHouseEasy.dll
 C:\Users\nicla\source\repos\houseasy-teste-backend\TesteHouseEasy\TesteHouseEasy\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\nicla\source\repos\houseasy-teste-backend\TesteHouseEasy\TesteHouseEasy\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\nicla\source\repos\houseasy-teste-backend\TesteHouseEasy\TesteHouseEasy\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

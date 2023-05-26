@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using TesteHouseEasy.Contracts;
 using TesteHouseEasy.Models;
 using TesteHouseEasy.Models.Contract;
@@ -11,12 +12,15 @@ namespace TesteHouseEasy.Controllers
     public class UserController : Controller
     {
         private readonly IRepositoryBase<UserModel> _repositoryBase;
+        private readonly IMapper _mapper;
         public UserController(
             ILogger<UserModel> logger,
-            IRepositoryBase<UserModel> repositoryBase
+            IRepositoryBase<UserModel> repositoryBase,
+            IMapper mapper
             )
         {
             _repositoryBase = repositoryBase;
+            _mapper = mapper;
         }
 
 
@@ -50,12 +54,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultRequest> Insert([FromBody] UserModel entity)
+        public async Task<ResultRequest> Insert([FromBody] UserDTO entity)
         {
             try
             {
-                await _repositoryBase.Insert(entity);
-                return new ResultRequest(true, new UserDTO(entity));
+                var userModel = _mapper.Map<UserDTO, UserModel>(entity);
+                await _repositoryBase.Insert(userModel);
+                return new ResultRequest(true, new UserDTO(userModel));
             }
             catch (Exception ex)
             {
@@ -64,12 +69,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPut]
-        public async Task<ResultRequest> Update([FromBody] UserModel entity)
+        public async Task<ResultRequest> Update([FromBody] UserDTO entity)
         {
             try
             {
-                _repositoryBase.Update(entity);
-                return new ResultRequest(true, new UserDTO(entity));
+                var userModel = _mapper.Map<UserDTO, UserModel>(entity);
+                await _repositoryBase.Update(userModel);
+                return new ResultRequest(true, new UserDTO(userModel));
             }
             catch (Exception ex)
             {

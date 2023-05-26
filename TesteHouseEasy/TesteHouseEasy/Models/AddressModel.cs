@@ -1,4 +1,5 @@
 ﻿using TesteHouseEasy.Models.Contract;
+using TesteHouseEasy.Models.DTO;
 
 namespace TesteHouseEasy.Models
 {
@@ -13,5 +14,6 @@ namespace TesteHouseEasy.Models
 
         public int UserModelId { get; set; }
         public virtual UserModel? UserModel { get; set; }
+
     }
 }

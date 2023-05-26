@@ -8,7 +8,7 @@ namespace TesteHouseEasy.Contracts
     {
         Task<TEntity> GetById(int id);
         Task<IEnumerable<TEntity>> GetAll();
-        Task Insert(TEntity entity); // to do remover distritos
+        Task Insert(TEntity entity);
         Task Update(TEntity entity);
         Task Delete(int id);
     }

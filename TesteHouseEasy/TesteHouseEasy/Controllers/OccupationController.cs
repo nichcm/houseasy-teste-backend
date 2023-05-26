@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using TesteHouseEasy.Contracts;
 using TesteHouseEasy.Models;
 using TesteHouseEasy.Models.Contract;
@@ -11,12 +12,15 @@ namespace TesteHouseEasy.Controllers
     public class OccupationController : Controller
     {
         private readonly IRepositoryBase<OccupationModel> _repositoryBase;
+        private readonly IMapper _mapper;
         public OccupationController(
             ILogger<OccupationModel> logger,
-            IRepositoryBase<OccupationModel> repositoryBase
+            IRepositoryBase<OccupationModel> repositoryBase,
+            IMapper mapper
             )
         {
             _repositoryBase = repositoryBase;
+            _mapper = mapper;
         }
 
 
@@ -50,12 +54,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultRequest> Insert([FromBody] OccupationModel entity)
+        public async Task<ResultRequest> Insert([FromBody] OccupationDTO entity)
         {
             try
             {
-                await _repositoryBase.Insert(entity);
-                return new ResultRequest(true, new OccupationDTO(entity));
+                var occupationModel = _mapper.Map<OccupationDTO, OccupationModel>(entity);
+                await _repositoryBase.Insert(occupationModel);
+                return new ResultRequest(true, new OccupationDTO(occupationModel));
             }
             catch (Exception ex)
             {
@@ -64,12 +69,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPut]
-        public async Task<ResultRequest> Update([FromBody] OccupationModel entity)
+        public async Task<ResultRequest> Update([FromBody] OccupationDTO entity)
         {
             try
             {
-                await _repositoryBase.Update(entity);
-                return new ResultRequest(true, new OccupationDTO(entity));
+                var occupationModel = _mapper.Map<OccupationDTO, OccupationModel>(entity);
+                await _repositoryBase.Update(occupationModel);
+                return new ResultRequest(true, new OccupationDTO(occupationModel));
             }
             catch (Exception ex)
             {

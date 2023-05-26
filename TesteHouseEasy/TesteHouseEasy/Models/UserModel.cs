@@ -9,7 +9,6 @@ namespace TesteHouseEasy.Models
         public string? Gender { get; set; }
         public string? Email { get; set; }
         public int OccupationModelId { get; set; }
-
         public virtual OccupationModel? OccupationModel { get; set; }
      
     }

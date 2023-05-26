@@ -9,7 +9,5 @@ namespace TesteHouseEasy.Models
         public string? Responsibilities { get; set; }
         public string? EmploymentStatus { get; set; }
         public string? Salary { get; set; }
-        public int UserModelId { get; set; }
-        public virtual UserModel? UserModel { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using TesteHouseEasy.Contracts;
 using TesteHouseEasy.Models;
 using TesteHouseEasy.Models.Contract;
@@ -11,11 +12,14 @@ namespace TesteHouseEasy.Controllers
     public class PhoneController : Controller
     {
         private readonly IRepositoryBase<PhoneModel> _repositoryBase;
+        private readonly IMapper _mapper;
         public PhoneController(
             ILogger<PhoneModel> logger,
-            IRepositoryBase<PhoneModel> repositoryBase)
+            IRepositoryBase<PhoneModel> repositoryBase,
+            IMapper mapper)
         {
             _repositoryBase = repositoryBase;
+            _mapper = mapper;
         }
 
 
@@ -49,12 +53,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultRequest> Insert([FromBody] PhoneModel entity)
+        public async Task<ResultRequest> Insert([FromBody] PhoneDTO entity)
         {
             try
             {
-                await _repositoryBase.Insert(entity);
-                return new ResultRequest(true, new PhoneDTO(entity));
+                var phoneModel = _mapper.Map<PhoneDTO, PhoneModel>(entity);
+                await _repositoryBase.Insert(phoneModel);
+                return new ResultRequest(true, new PhoneDTO(phoneModel));
             }
             catch (Exception ex)
             {
@@ -63,12 +68,13 @@ namespace TesteHouseEasy.Controllers
         }
 
         [HttpPut]
-        public async Task<ResultRequest> Update([FromBody] PhoneModel entity)
+        public async Task<ResultRequest> Update([FromBody] PhoneDTO entity)
         {
             try
             {
-                await _repositoryBase.Update(entity);
-                return new ResultRequest(true, new PhoneDTO(entity));
+                var phoneModel = _mapper.Map<PhoneDTO, PhoneModel>(entity);
+                await _repositoryBase.Update(phoneModel);
+                return new ResultRequest(true, new PhoneDTO(phoneModel));
             }
             catch (Exception ex)
             {

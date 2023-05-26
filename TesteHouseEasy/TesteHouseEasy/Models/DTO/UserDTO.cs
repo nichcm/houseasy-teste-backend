@@ -1,6 +1,8 @@
-﻿namespace TesteHouseEasy.Models.DTO
+﻿using TesteHouseEasy.Models.Contract;
+
+namespace TesteHouseEasy.Models.DTO
 {
-    public class UserDTO
+    public class UserDTO : BaseModel
     {
         public string? Name { get; set; }
         public int? Age { get; set; }
@@ -12,6 +14,7 @@
 
         public UserDTO(UserModel user)
         {
+            Id = user.Id;
             Name = user.Name;
             Age = user.Age;
             Gender = user.Gender;

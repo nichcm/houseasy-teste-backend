@@ -15,10 +15,10 @@ namespace TesteHouseEasy.Data.Map
             builder.Property(x => x.EmploymentStatus).HasMaxLength(20);
             builder.Property(x => x.Salary).IsRequired().HasMaxLength(20);
 
-            builder.HasOne(x => x.UserModel)
-               .WithOne(x => x.OccupationModel)
-               .HasForeignKey<UserModel>(x => x.OccupationModelId);
-           
+            builder.HasMany<UserModel>()
+                .WithOne(x => x.OccupationModel)
+                .HasForeignKey(x => x.OccupationModelId);
+
         }
     }
 }

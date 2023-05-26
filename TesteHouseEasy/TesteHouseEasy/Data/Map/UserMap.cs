@@ -12,7 +12,6 @@ namespace TesteHouseEasy.Data.Map
             builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
             builder.Property(x => x.Age).IsRequired();
             builder.Property(x => x.Email).IsRequired().HasMaxLength(20);
-            builder.Property(x => x.OccupationModelId);
 
             builder.HasMany<PhoneModel>()
                 .WithOne(x => x.UserModel)
