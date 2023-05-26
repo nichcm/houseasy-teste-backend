@@ -9,11 +9,11 @@ Este repositório contém um código em C# que utiliza o .NET Entity Framework e
 - Entity Framework
 - Migrations
 
-#Pré-requisitos
+# Pré-requisitos
 - Visual Studio (ou qualquer IDE compatível) com o .NET Framework instalado.
 - SQL Server (ou qualquer outro servidor de banco de dados suportado).
 
-#Instruções de Configuração
+# Instruções de Configuração
 1) Clone o repositório em sua máquina local usando o seguinte comando:
   git clone https://github.com/nichcm/houseasy-teste-backend.git
 2) Abra o arquivo de solução (TesteHouseEasy.sln) no Visual Studio.
@@ -28,12 +28,12 @@ Este repositório contém um código em C# que utiliza o .NET Entity Framework e
 8)Execute o aplicativo e explore o código fornecido para entender sua estrutura e funcionalidade.
 
 
-#Utilização
+# Utilização
 Este código pode servir como ponto de partida para o desenvolvimento de aplicativos que exigem operações de banco de dados usando o Entity Framework e Migrations. Ele fornece um conjunto de modelos de banco de dados preconfigurados, migrações e configurações de conexão para facilitar o processo de desenvolvimento.
 
 Sinta-se à vontade para modificar e estender o código de acordo com seus requisitos específicos. Você pode adicionar mais modelos, definir migrações adicionais e personalizar as operações de banco de dados conforme necessário.
 
-#Contribuições
+# Contribuições
 Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
 
 Faça um fork do repositório.
